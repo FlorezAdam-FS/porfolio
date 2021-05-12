@@ -1,3 +1,4 @@
+// Create a Vue instance for the portfolio section
 var porfolio = new Vue({
   el: "#portfolio",
   data: {

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;1,300;1,400&display=swap");
 
+/* ====== General ======= */
 * {
   margin: 0;
   padding: 0;
@@ -16,21 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-.circle {
-  position: absolute;
-  right: 10%;
-  bottom: 20%;
-  height: 300px;
-  max-width: 300px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(161, 161, 161, 0.37);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
-  border-radius: 400px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
+/* ====== Navigation ======= */
 .nav-link {
   color: white;
   width: 100%;
@@ -85,6 +72,8 @@ svg {
   color: white;
 }
 
+/* ====== Content ======= */
+
 .content {
   width: calc(100vw - 60px);
   position: absolute;
@@ -101,6 +90,11 @@ svg {
   /* height: 100vh; */
   padding: 2rem;
   position: relative;
+}
+
+/* ======= Hero ======= */
+#hero {
+  height: 100vh;
 }
 
 .info {
@@ -125,25 +119,15 @@ svg {
   font-size: 1rem;
 }
 
-#hero {
-  height: 100vh;
-}
-
-.hero-image {
-  position: absolute;
-  bottom: 100px;
-  right: -50px;
-  transform: rotate(15deg);
-  width: 120%;
-  max-width: 800px;
-  z-index: 0;
+#hero img {
+  display: none;
 }
 
 .download {
   width: 100%;
 }
 
-/* About */
+/* ======= About ======= */
 #about {
   display: flex;
   flex-direction: column;
@@ -169,8 +153,13 @@ svg {
   line-height: 1.6;
 }
 
-#about ion-icon {
-  color: black;
+/* ======= Portfolio ======= */
+#portfolio {
+  margin: 0;
+}
+
+#portfolio h2 {
+  text-align: center;
 }
 
 #portfolio ul {
@@ -181,14 +170,7 @@ svg {
   padding: 0;
 }
 
-#portfolio {
-  margin: 0;
-}
-
-#portfolio h2 {
-  text-align: center;
-}
-
+/* ======= Portfolio Card ======= */
 .p-card {
   width: 100%;
   height: calc(100vw - 100px);
@@ -266,6 +248,7 @@ svg {
   margin-right: 10px;
 }
 
+/* ======= Contact ======= */
 .contact-card .social ion-icon {
   font-size: 40px;
 }
@@ -301,14 +284,27 @@ svg {
   color: rgb(37, 37, 37);
 }
 
-#hero img {
-  display: none;
-}
-
+/* ======= Media Query ======= */
 @media screen and (min-width: 615px) {
+  /* Hero */
+
+  #hero img {
+    position: absolute;
+    display: block;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px;
+  }
+
+  /* About */
+
   #about p {
     width: 600px;
   }
+
+  /* Portfolio */
 
   #portfolio ul {
     flex-direction: row;
@@ -316,19 +312,40 @@ svg {
     align-items: center;
     justify-content: center;
   }
-
   .p-card {
     width: 400px;
     height: 450px;
     margin: 20px;
   }
-
   .p-links a {
     padding: 16px 50px;
   }
-
   .p-card p {
     font-size: 1.3rem;
+  }
+  .p-card img {
+    z-index: 0;
+    transition: all 0.3s ease;
+  }
+  .p-card:hover > img {
+    filter: brightness(1);
+  }
+  .p-card:hover > h3 {
+    opacity: 0;
+  }
+  .p-card:hover > p {
+    opacity: 0;
+  }
+  .p-link {
+    z-index: 1000;
+  }
+
+  /* Contact */
+
+  #contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .contact-card {
@@ -377,40 +394,5 @@ svg {
 
   .social a:hover {
     background: lightgray;
-  }
-
-  #contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .p-card img {
-    z-index: 0;
-    transition: all 0.3s ease;
-  }
-
-  .p-card:hover > img {
-    filter: brightness(1);
-  }
-
-  .p-card:hover > h3 {
-    opacity: 0;
-  }
-  .p-card:hover > p {
-    opacity: 0;
-  }
-  .p-link {
-    z-index: 1000;
-  }
-
-  #hero img {
-    position: absolute;
-    display: block;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 800px;
   }
 }
